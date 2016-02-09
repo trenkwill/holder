@@ -1,0 +1,42 @@
+# Jekyll configuration precedence:
+# 1. Gruntfile task
+# 2. config.build.yml
+# 3. config.yml
+
+name: holder
+description: Restaurant Holder
+author:
+  name: Holder
+  email: williamhutter@me.com
+
+# Grunt handles images and assets.
+exclude: ['img', 'css', 'js', 'fonts',
+          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+
+include: ['.htaccess']
+
+# _config.build.yml sets future and show_drafts to false on `grunt build`
+future: true
+show_drafts: true
+
+permalink: none
+paginate: 1
+paginate_path: 'page:num'
+
+# Markdown library
+markdown: kramdown
+#   extensions: ['fenced_code_blocks', 'smart']
+
+pygments: false
+
+navigation:
+- text: What we do
+  url: /en/what-we-do/
+- text: Who we are
+  url: /en/who-we-are/
+- text: Projects
+  url: /en/projects/
+  layout: project
+- text: Blog
+  url: /en/blog/
+  layout: post

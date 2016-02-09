@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- build:css({app,.tmp}) /css/main.css -->
+    <link rel="stylesheet" href="/_bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js(app) /js/head-scripts.js -->
+    <!-- Replace with a custom modernizer build for production -->
+    <script src="/_bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
+    
+  </head>
+  <body {% if page.img %} style="background-image: url(/img/{{ page.img }});"{% endif %}>
+
+    <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+        
+    <header class="header clearfix">
+        <a href="{% if page.url contains '/en/' %}/en/{% else %}/{% endif %}" class="header__logo {% if page.url == "/en/index.html"%}header__logo--homepage{% elsif page.url == "/index.html"%}header__logo--homepage{% endif %}"><img src="/img/logo-holder.png" alt="logo holder"></a>    
+        <p class="header__tel">RESERVATIONS:514-849-0333</p>
+    </header>
+
+    <nav class="nav">
+        <div class="lang">
+            <a href="/en{{page.url|remove:'en/'}}"><img src="/img/gb.png" alt="gb"></a>
+            <a href="{{page.url|remove:'en/'}}"><img src="/img/fr.png" alt="fr"></a>
+        </div>
+        <ul>
+            <li>
+                <a href="{% if page.url contains '/en/' %}/en/{% else %}/{% endif %}">{% if page.url contains '/en/' %}Home{% else %}Accueil{% endif %}</a>
+            </li>
+            <li>
+                <a href="{% if page.url contains '/en/' %}/en/a-propos-du-restaurant-holder/{% else %}/a-propos-du-restaurant-holder/{% endif %}" {% if page.url contains '/a-propos-du-restaurant-holder/'%}class="is-current"{% endif %}>{% if page.url contains '/en/' %}About Us{% else %}À propos{% endif %}</a>
+            </li>
+            <li><a href="#">Menus</a>
+                <ul>
+                    <li><a href="{% if page.url contains '/en/' %}/en/menu-regulier-a-la-carte/{% else %}/menu-regulier-a-la-carte/{% endif %}" {% if page.url contains '/menu-regulier-a-la-carte/'%}class="is-current"{% endif %}>– A la carte</a></li>
+                    <li><a href="{% if page.url contains '/en/' %}/en/desserts-fromages-autres/{% else %}/desserts-fromages-autres/{% endif %}" {% if page.url contains '/desserts-fromages-autres/'%}class="is-current"{% endif %}>– {% if page.url contains '/en/' %}Desserts, cheeses, etc{% else %}Desserts, fromages, etc
+                    {% endif %}</a></li>
+                    <li><a href="{% if page.url contains '/en/' %}/en/groupe/{% else %}/groupe/{% endif %}" {% if page.url contains '/groupe/'%}class="is-current"{% endif %}>– {% if page.url == '/en/a-propos-du-restaurant-holder/' %}Groups{% else %}Groupes{% endif %}</a></li>
+                </ul>
+                </li>
+            <li><a href="#">Brunch</a>
+                <ul style="left:109px">
+                    <li><a href="{% if page.url contains '/en/' %}/en/brunch-a-la-carte/{% else %}/brunch-a-la-carte/{% endif %}" {% if page.url contains '/brunch-a-la-carte/'%}class="is-current"{% endif %}>– À la carte</a></li>
+                    <li><a href="{% if page.url contains '/en/' %}/en/brunch-groupes-de-12/{% else %}/brunch-groupes-de-12/{% endif %}" {% if page.url contains '/brunch-groupes-de-12/'%}class="is-current"{% endif %}>– {% if page.url contains '/en/' %}Groups (12+){% else %}Groupes (12+)
+                    {% endif %}</a></li>
+                    <li><a href="{% if page.url contains '/en/' %}/en/brunch-pour-groupe-20-plus/{% else %}/brunch-pour-groupe-20-plus/{% endif %}" {% if page.url contains '/brunch-pour-groupe-20-plus/'%}class="is-current"{% endif %}>– {% if page.url contains '/en/' %}Groups (20+){% else %}Groupes (20+)
+                    {% endif %}</a></li>
+                </ul>
+            </li>
+            <li><a href="">{% if page.url contains '/en/' %}Wine list{% else %}Carte des vins{% endif %}</a>
+                <ul style="left:{% if page.url contains '/en/' %}112px{% else %}182px{% endif %};">
+                    <li><a href="{% if page.url contains '/en/' %}/en/vins-rouges/{% else %}/vins-rouges/{% endif %}" {% if page.url contains '/vins-rouges/'%}class="is-current"{% endif %}>– {% if page.url contains '/en/' %}Red wines{% else %}Vins rouge{% endif %}</a></li>
+                    <li><a href="{% if page.url contains '/en/' %}/en/vins-blancs/{% else %}/vins-blancs/{% endif %}" {% if page.url contains '/vins-blancs/'%}class="is-current"{% endif %}>– {% if page.url contains '/en/' %}White wines{% else %}Vins blancs{% endif %}</a></li>
+                    <li><a href="{% if page.url contains '/en/' %}/en/cidre-roses-champagnes/{% else %}/cidre-roses-champagnes/{% endif %}" {% if page.url contains '/cidre-roses-champagnes/'%}class="is-current"{% endif %}>– {% if page.url contains '/en/' %}Cider, rosés &amp; champagnes{% else %}Cidres, rosés &amp; champagnes{% endif %}</a></li>
+                </ul>
+            </li>
+            <li><a href="{% if page.url contains '/en/' %}/en/photos/{% else %}/photos/{% endif %}" {% if page.url contains '/photos/'%}class="is-current"{% endif %}>Photos</a></li>
+            <li><a href="{% if page.url contains '/en/' %}/en/visite-virtuelle/{% else %}/visite-virtuelle/{% endif %}" {% if page.url contains '/visite-virtuelle/'%}class="is-current"{% endif %}>{% if page.url contains '/en/' %}Virtual visit{% else %}Visite Virtuelle{% endif %}</a></li>
+            <li><a href="{% if page.url contains '/en/' %}/en/les-critiques/{% else %}/les-critiques/{% endif %}" {% if page.url contains '/les-critiques/'%}class="is-current"{% endif %}>{% if page.url contains '/en/' %}Reviews{% else %}Les critiques{% endif %}</a></li>
+            <li><a href="{% if page.url contains '/en/' %}/en/contact-us/{% else %}/contact-us/{% endif %}" {% if page.url contains '/contact-us/'%}class="is-current"{% endif %}>Informations</a></li>
+        </ul>
+    </nav>
+    
+    
+
+    
+    <div class="main" role="main">
+        {% if page.url == "/en/"%}
+        <div class="main__homepage">{{ content }}</div>
+        {% elsif page.url == "/"%}
+        <div class="main__homepage">{{ content }}</div>
+        {% else %}
+        <h2>{{page.title}}</h2>
+        <div class="main__bg {% if page.url contains '/contact-us/'%}clearfix{% endif %}">{{ content }}</div>
+        {% endif %}
+        
+    </div>
+    
+    <div class="bg-pattern"></div>
+        
+    {% include scripts.html %}
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+---
+layout: default
+title: Photos
+imgs: [IMG_3320.jpg, IMG_3326.jpg, IMG_3340.jpg, IMG_3341.jpg, IMG_3347.jpg]
+img: apropos.jpg
+---
+
+   <div class="fade">
+{% for image in page.imgs %}
+   	<img src="/img/{{ image }}" alt="{{ image }}">
+{% endfor %}
+   </div>
